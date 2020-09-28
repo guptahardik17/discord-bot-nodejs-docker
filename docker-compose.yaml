@@ -25,7 +25,7 @@ services:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - REDIS_PASSWORD=foobared
-      - GOOGLE_SEARCH_API_KEY=AIzaSyA-PpHBwckKzKsn-FMDWURox_iqZkHoVPs
-      - GOOGLE_SEARCH_CX=abe5b63fb991b5260
-      - DISCORD_API_KEY=NzU5ODUyNTEyOTc4NDAzMzQw.X3DhzA.CGesRjaDKMX74Ti7LJxbb7f55rQ
+      - GOOGLE_SEARCH_API_KEY=
+      - GOOGLE_SEARCH_CX=
+      - DISCORD_API_KEY=
     container_name: discord-bot-api-container
