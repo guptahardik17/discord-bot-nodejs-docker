@@ -45,6 +45,6 @@ module.exports = {
     if(matchedKeys.length === 0){
       return "No Matches Found!";
     }
-    return matchedKeys;
+    return Array.from(new Set(matchedKeys));
   }
 } 
