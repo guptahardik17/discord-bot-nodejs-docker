@@ -1,0 +1,31 @@
+version: "3.2"
+services:
+  redis:
+    image: "redis:latest"
+    command: redis-server --requirepass foobared
+    restart: on-failure:2
+    ports:
+     - "6379:6379"
+    container_name: discord-bot-redis-container
+  api:
+    depends_on:
+      - redis
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "80:4000"
+    restart: on-failure:10
+    volumes:
+      - ./www/:/var/www/html/
+    environment:
+      - APP_URL=http://localhost:3000
+      - APP_PORT=4000
+      - NODE_ENV=development
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=foobared
+      - GOOGLE_SEARCH_API_KEY=AIzaSyA-PpHBwckKzKsn-FMDWURox_iqZkHoVPs
+      - GOOGLE_SEARCH_CX=abe5b63fb991b5260
+      - DISCORD_API_KEY=NzU5ODUyNTEyOTc4NDAzMzQw.X3DhzA.CGesRjaDKMX74Ti7LJxbb7f55rQ
+    container_name: discord-bot-api-container

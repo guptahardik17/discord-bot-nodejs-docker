@@ -1,0 +1,22 @@
+{
+  "name": "connect-4-game",
+  "version": "1.0.0",
+  "description": "An api to play connect 4 game.",
+  "scripts": {
+    "start": "node app/index.js",
+    "start:dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Hardik Gupta",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "discord.js": "^12.3.1",
+    "ioredis": "^4.17.3",
+    "querystring": "^0.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.11"
+  }
+}
